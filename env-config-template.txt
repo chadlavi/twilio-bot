@@ -1,0 +1,11 @@
+# Environment Config
+
+# Copy and paste these to your .env file in glitch and provide your Twilio credentials
+
+# reference these in your code with process.env.SECRET
+
+TWILIO_ACCOUNT_SID=''
+TWILIO_AUTH_TOKEN=''
+
+# your twilio number
+from=''
