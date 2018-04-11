@@ -1,0 +1,1 @@
+A simple API endpoint to receive texts from Twilio and respond to them.
