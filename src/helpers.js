@@ -1,0 +1,1 @@
+export const getRandom = a => a[Math.floor(Math.random()*a.length)]
