@@ -1,29 +1,35 @@
 {
-	"name": "hyperdev-api",
-	"version": "0.0.1",
-	"description": "API Example App",
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js"
-	},
-	"dependencies": {
-		"express": "^5.0.0-alpha.2",
-		"body-parser": "^1.15.2",
-		"twilio": "^3.3.1-edge",
-		"chance": "^1.0.4",
-		"html": "^1.0.0",
-		"fs": "^0.0.2",
-		"simple-node-logger": "^0.93.12",
-		"winston": "^2.2.0"
-	},
-	"engines": {
-		"node": "4.4.5"
-	},
-	"keywords": [
-		"node",
-		"hyperdev",
-		"express",
-		"api"
-	],
-	"license": "MIT"
+  "name": "chadlavi-twilio",
+  "version": "1.0.0",
+  "description": "An ES6 node app for repling to twilio messages",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "rimraf dist/ && babel ./src/ --out-dir dist/ --copy-files",
+    "copy:view": "cp -r ./views ./dist/views",
+    "start": "npm run build && npm run copy:view && node dist/server.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "body-parser": "^1.19.0",
+    "chance": "^1.0.18",
+    "express": "^5.0.0-alpha.2",
+    "fs": "^0.0.2",
+    "html": "^1.0.0",
+    "simple-node-logger": "^18.12.23",
+    "twilio": "^4.6.0",
+    "winston": "^3.2.1"
+  },
+  "engines": {
+    "node": "10.15.3"
+  },
+  "keywords": [
+    "api",
+    "express",
+    "glitch",
+    "node"
+  ],
+  "license": "MIT"
 }
