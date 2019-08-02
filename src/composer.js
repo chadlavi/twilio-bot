@@ -12,8 +12,6 @@ import { wedding } from './wedding'
 
 const admins = process.env.privateNumbers.split(' ')
 
-console.log(admins)
-
 export const compose = (sender, body) => {
   
   const admin = Boolean(admins.includes(sender))
