@@ -1,2 +1,3 @@
 .glitch-assets
-dist
+.env
+dist/*
