@@ -10,9 +10,11 @@ import { tarot } from './tarot'
 import { thoughts } from './thoughts'
 import { wedding } from './wedding'
 
+const admins = process.env.privateNumbers
+
 export const compose = (sender, body) => {
   
-  const chad = Boolean(sender === '+1***REMOVED***')
+  const admin = Boolean(admins.includes(sender))
 
   if (/^emoji$/i.test(body)) {
     return getRandom(emoji)
@@ -32,8 +34,7 @@ export const compose = (sender, body) => {
   } 
   
   else if(/wedding|lavipalooza/i.test(body)) {
-    const isPrivate = ['+1***REMOVED***', '+1***REMOVED***'].includes(sender)
-    return isPrivate ? wedding : getRandom(random)
+    return admin ? wedding : getRandom(random)
   }
   
   else if (/what\ is\ this/i.test(body) || /what\ are\ you/i.test(body) || /who\ is\ this/i.test(body) || /who\ are\ you/i.test(body)) {
@@ -60,7 +61,7 @@ export const compose = (sender, body) => {
   
   else {
     const randomReply = getRandom(random)
-    var tip = Boolean(chance.d6()===6 && !chad)
+    var tip = Boolean(chance.d6()===6 && !admin)
     return `${randomReply}${tip ? ' \n(say "menu" for more options)' : ''}`
   }
 }
