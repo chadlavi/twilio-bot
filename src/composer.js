@@ -10,13 +10,15 @@ import { tarot } from './tarot'
 import { thoughts } from './thoughts'
 import { wedding } from './wedding'
 
-const admins = process.env.privateNumbers
+const admins = process.env.privateNumbers.split(' ')
+
+console.log(admins)
 
 export const compose = (sender, body) => {
   
   const admin = Boolean(admins.includes(sender))
 
-  if (/^emoji$/i.test(body)) {
+  if (/^emoji/i.test(body)) {
     return getRandom(emoji)
   }
 
